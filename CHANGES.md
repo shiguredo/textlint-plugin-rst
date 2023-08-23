@@ -11,6 +11,10 @@
 
 ## shiguredo
 
+## develop
+
+- [CHANGE] textlint 13.x 環境下で動作するよう修正
+
 ## 2023.3.0
 
 - [ADD] デバッグ出力を設定で切替可能にする
