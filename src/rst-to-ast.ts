@@ -86,18 +86,23 @@ export function parse(text: string, options?: ParseOptions): TxtParentNode {
         node.type = syntaxMap[node.original_type]
       }
       if (!node.type) {
-        node.type = 'Unknown'
+        // textlint v13.0.5 以降で ASTNodeTypes 以外を受け付けなくなったので node.type = 'Unknown' のような代入はできない
+        node.type = ASTNodeTypes.Str
       }
       // raw
       node.raw = node.raw || node.value || ''
       // value
       if (node.value === undefined) {
-        // comment ノードは value を持つ必要がある。また children は不要
-        if (node.type === ASTNodeTypes.Comment) {
-          node.value = node.raw
-          delete node.children
-        } else {
-          delete node.value
+        // comment, str, code ノードは value を持つ必要がある。また children は不要
+        switch (node.type) {
+          case ASTNodeTypes.Comment:
+          case ASTNodeTypes.Str:
+          case ASTNodeTypes.Code:
+            node.value = node.raw
+            delete node.children
+            break
+          default:
+            delete node.value
         }
       }
       // loc

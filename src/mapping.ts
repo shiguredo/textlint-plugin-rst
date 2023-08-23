@@ -3,7 +3,7 @@
 import { ASTNodeTypes } from "@textlint/ast-node-types";
 
 interface SyntaxMap {
-    [index: string]: ASTNodeTypes
+    [index: string]: keyof typeof ASTNodeTypes
 }
 
 export const syntaxMap: SyntaxMap = {
