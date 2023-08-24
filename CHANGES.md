@@ -13,7 +13,8 @@
 
 ## develop
 
-- [CHANGE] textlint 13.x 環境下で動作するよう修正
+- [FIX] textlint 13.x 環境下で NodeType = Code のとき node.value が要求されるが、プラグイン側が対応できていない。これを textlint の要求に従うように修正する
+    - @max747
 
 ## 2023.3.0
 
