@@ -48,30 +48,9 @@
       "source": "<stdin>",
       "children": [
         {
-          "children": [
-            {
-              "type": "Str",
-              "raw": "{",
-              "value": "{",
-              "original_type": "text",
-              "range": [
-                0,
-                0
-              ],
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 0
-                }
-              }
-            }
-          ],
           "type": "Code",
           "raw": "{",
+          "value": "{",
           "original_type": "inline",
           "range": [
             0,
@@ -89,30 +68,9 @@
           }
         },
         {
-          "children": [
-            {
-              "type": "Str",
-              "raw": "\n    ",
-              "value": "\n    ",
-              "original_type": "text",
-              "range": [
-                0,
-                0
-              ],
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 0
-                }
-              }
-            }
-          ],
           "type": "Code",
           "raw": "\n    ",
+          "value": "\n    ",
           "original_type": "inline",
           "range": [
             0,
@@ -130,30 +88,9 @@
           }
         },
         {
-          "children": [
-            {
-              "type": "Str",
-              "raw": "\"type\"",
-              "value": "\"type\"",
-              "original_type": "text",
-              "range": [
-                0,
-                0
-              ],
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 0
-                }
-              }
-            }
-          ],
           "type": "Code",
           "raw": "\"type\"",
+          "value": "\"type\"",
           "original_type": "inline",
           "range": [
             0,
@@ -171,30 +108,9 @@
           }
         },
         {
-          "children": [
-            {
-              "type": "Str",
-              "raw": ":",
-              "value": ":",
-              "original_type": "text",
-              "range": [
-                0,
-                0
-              ],
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 0
-                }
-              }
-            }
-          ],
           "type": "Code",
           "raw": ":",
+          "value": ":",
           "original_type": "inline",
           "range": [
             96,
@@ -212,30 +128,9 @@
           }
         },
         {
-          "children": [
-            {
-              "type": "Str",
-              "raw": " ",
-              "value": " ",
-              "original_type": "text",
-              "range": [
-                106,
-                107
-              ],
-              "loc": {
-                "start": {
-                  "line": 9,
-                  "column": 0
-                },
-                "end": {
-                  "line": 9,
-                  "column": 1
-                }
-              }
-            }
-          ],
           "type": "Code",
           "raw": " ",
+          "value": " ",
           "original_type": "inline",
           "range": [
             82,
@@ -253,30 +148,9 @@
           }
         },
         {
-          "children": [
-            {
-              "type": "Str",
-              "raw": "\"fruit\"",
-              "value": "\"fruit\"",
-              "original_type": "text",
-              "range": [
-                0,
-                0
-              ],
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 0
-                }
-              }
-            }
-          ],
           "type": "Code",
           "raw": "\"fruit\"",
+          "value": "\"fruit\"",
           "original_type": "inline",
           "range": [
             0,
@@ -294,30 +168,9 @@
           }
         },
         {
-          "children": [
-            {
-              "type": "Str",
-              "raw": ",",
-              "value": ",",
-              "original_type": "text",
-              "range": [
-                0,
-                0
-              ],
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 0
-                }
-              }
-            }
-          ],
           "type": "Code",
           "raw": ",",
+          "value": ",",
           "original_type": "inline",
           "range": [
             0,
@@ -335,30 +188,9 @@
           }
         },
         {
-          "children": [
-            {
-              "type": "Str",
-              "raw": "\n    ",
-              "value": "\n    ",
-              "original_type": "text",
-              "range": [
-                0,
-                0
-              ],
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 0
-                }
-              }
-            }
-          ],
           "type": "Code",
           "raw": "\n    ",
+          "value": "\n    ",
           "original_type": "inline",
           "range": [
             0,
@@ -376,30 +208,9 @@
           }
         },
         {
-          "children": [
-            {
-              "type": "Str",
-              "raw": "\"name\"",
-              "value": "\"name\"",
-              "original_type": "text",
-              "range": [
-                0,
-                0
-              ],
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 0
-                }
-              }
-            }
-          ],
           "type": "Code",
           "raw": "\"name\"",
+          "value": "\"name\"",
           "original_type": "inline",
           "range": [
             90,
@@ -417,30 +228,9 @@
           }
         },
         {
-          "children": [
-            {
-              "type": "Str",
-              "raw": ":",
-              "value": ":",
-              "original_type": "text",
-              "range": [
-                0,
-                0
-              ],
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 0
-                }
-              }
-            }
-          ],
           "type": "Code",
           "raw": ":",
+          "value": ":",
           "original_type": "inline",
           "range": [
             96,
@@ -458,30 +248,9 @@
           }
         },
         {
-          "children": [
-            {
-              "type": "Str",
-              "raw": " ",
-              "value": " ",
-              "original_type": "text",
-              "range": [
-                106,
-                107
-              ],
-              "loc": {
-                "start": {
-                  "line": 9,
-                  "column": 0
-                },
-                "end": {
-                  "line": 9,
-                  "column": 1
-                }
-              }
-            }
-          ],
           "type": "Code",
           "raw": " ",
+          "value": " ",
           "original_type": "inline",
           "range": [
             82,
@@ -499,30 +268,9 @@
           }
         },
         {
-          "children": [
-            {
-              "type": "Str",
-              "raw": "\"apple\"",
-              "value": "\"apple\"",
-              "original_type": "text",
-              "range": [
-                0,
-                0
-              ],
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 0
-                }
-              }
-            }
-          ],
           "type": "Code",
           "raw": "\"apple\"",
+          "value": "\"apple\"",
           "original_type": "inline",
           "range": [
             98,
@@ -540,30 +288,9 @@
           }
         },
         {
-          "children": [
-            {
-              "type": "Str",
-              "raw": "\n",
-              "value": "\n",
-              "original_type": "text",
-              "range": [
-                0,
-                0
-              ],
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 0
-                }
-              }
-            }
-          ],
           "type": "Code",
           "raw": "\n",
+          "value": "\n",
           "original_type": "inline",
           "range": [
             0,
@@ -581,30 +308,9 @@
           }
         },
         {
-          "children": [
-            {
-              "type": "Str",
-              "raw": "}",
-              "value": "}",
-              "original_type": "text",
-              "range": [
-                110,
-                111
-              ],
-              "loc": {
-                "start": {
-                  "line": 9,
-                  "column": 4
-                },
-                "end": {
-                  "line": 9,
-                  "column": 5
-                }
-              }
-            }
-          ],
           "type": "Code",
           "raw": "}",
+          "value": "}",
           "original_type": "inline",
           "range": [
             110,
