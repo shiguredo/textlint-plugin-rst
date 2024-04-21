@@ -2,7 +2,6 @@
 import assert from "assert";
 import fs from "fs";
 import path from "path";
-import { test } from "@textlint/ast-tester";
 import { parse, indexOfMultiLineWithoutLspaces } from "../src/rst-to-ast";
 import type { TxtParentNode } from "@textlint/ast-node-types";
 
@@ -28,8 +27,11 @@ describe("testcase", () => {
                 const fixtureDir = path.join(fixturesDir, caseName)
                 const inputFile = path.join(fixtureDir, "input.rst")
                 const inputContent = fs.readFileSync(inputFile, "utf-8")
-                // const actual = parse(inputContent, { debug: true })
-                const actual = parse(inputContent)
+                const parseOption = {
+                    parseCommand: 'rst2ast -q',
+                    debug: false,
+                }
+                const actual = parse(inputContent, parseOption)
                 const expectedFile = path.join(fixtureDir, "expected.json")
                 // Usage: update snapshots
                 // UPDATE_SNAPSHOT=1 npm test
