@@ -35,19 +35,42 @@ $ npm install git+https://github.com/shiguredo/textlint-plugin-rst#shiguredo
 
 ## 利用方法
 
-Sphinx で source ディレクトリを利用している場合は以下のように実行することでチェックが走ります。
+.textlintrc に以下を記述します:
 
-```console
-$ npx textlint --plugin rst source/
-```
-
-.textlintrc に以下を登録してください
-
-```
+```json
 {
     "plugins": [
         "rst"
     ]
+}
+```
+
+### Advanced: プラグインの設定
+
+textlint-plugin-rst では rst ファイルをパースする際に内部で実行するコマンドを指定することができます。
+デフォルトは `rst2ast -q` が指定されています。これを上書きする場合は `.textlintrc` の `plugins` セクションに
+`command` オプションを指定します。
+
+```json
+{
+    "plugins": {
+        "rst": {
+            "command": "rye run rst2ast -q"
+        }
+    }
+}
+```
+
+プラグインの実行対象とするファイル拡張子も指定することができます。
+デフォルトでは `.rst` `.rest` が指定されています。
+
+```json
+{
+    "plugins": {
+        "rst": {
+            "extensions": [".rst", ".rest", ".txt"]
+        }
+    }
 }
 ```
 

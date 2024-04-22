@@ -16,8 +16,9 @@ function filterAndReplaceNodeAttributes(node: TxtNode) {
   })
 }
 
-export type ParseOptions = {
-  debug: boolean;
+export type ParseOption = {
+  parseCommand: string
+  debug: boolean
 }
 
 function findParentNode(parent: TraverseContext | undefined): TxtNode | undefined {
@@ -35,9 +36,8 @@ function findParentNode(parent: TraverseContext | undefined): TxtNode | undefine
  * @param {string} text
  * @returns {TxtParentNode}
  */
-export function parse(text: string, options?: ParseOptions): TxtParentNode {
-  const isDebug = process.env.DEBUG?.startsWith("textlint:rst") ?? options?.debug ?? false;
-  const ast = JSON.parse(execSync('rst2ast -q', { input: text, maxBuffer: 8192 * 8192 }).toString())
+export function parse(text: string, options: ParseOption): TxtParentNode {
+  const ast = JSON.parse(execSync(options.parseCommand, { input: text, maxBuffer: 8192 * 8192 }).toString())
   const src = new StructuredSource(text)
   // NOTE: 設定で動的に増やせるようにすると良い
   const originalTypesNeedCalibration: Array<string> = [
@@ -65,7 +65,7 @@ export function parse(text: string, options?: ParseOptions): TxtParentNode {
       }
       filterAndReplaceNodeAttributes(node)
       const parentNode = findParentNode(this.parent)
-      if (isDebug) {
+      if (options.debug) {
         console.log("===== node (raw) ===================")
         console.dir(node, {depth: null})
         // NOTE: 必要でない限り parent node の情報は dump しなくて良さそう。情報過多になる
@@ -140,7 +140,7 @@ export function parse(text: string, options?: ParseOptions): TxtParentNode {
           }
 
           const fromIndex = src.positionToIndex(searchStartPos)
-          if (isDebug) {
+          if (options.debug) {
             console.log("--------------------------")
             console.log(`fromIndex: ${fromIndex}`)
             console.log(`substr (20): ${text.substring(fromIndex, fromIndex+20)}`)
@@ -156,13 +156,13 @@ export function parse(text: string, options?: ParseOptions): TxtParentNode {
           let end = 0
           // 見つからない場合は range = [0, 0] を設定
           if (start < 0) {
-            if (isDebug) {
+            if (options.debug) {
               console.log(">>>>> not found, set start to 0")
             }
             start = 0
           } else {
             end = start + node.raw.length
-            if (isDebug) {
+            if (options.debug) {
               console.log(">>>>> found")
               console.log(`>>>>> start: ${start}, end: ${end}`)
               console.log(`>>>>> ${text.substring(start, end)}`)
@@ -171,7 +171,7 @@ export function parse(text: string, options?: ParseOptions): TxtParentNode {
           node.range = [start, end]
           node.loc = src.rangeToLocation(node.range)
         }
-        if (isDebug && node.range[0] === 0 && node.range[1] === 0) {
+        if (options.debug && node.range[0] === 0 && node.range[1] === 0) {
           console.log("-------------------------")
           console.log(`node.line:`)
           console.dir(node.line, { depth: null })
@@ -184,7 +184,7 @@ export function parse(text: string, options?: ParseOptions): TxtParentNode {
         }
         delete node.line
       }
-      if (isDebug) {
+      if (options.debug) {
         console.log("===== node (updated) =====================")
         console.dir(node, {depth: null})
       }

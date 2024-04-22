@@ -1,23 +1,42 @@
-import type { TextlintPluginOptions } from '@textlint/types'
+import { parse, ParseOption } from './rst-to-ast'
 
-import { parse } from './rst-to-ast'
+export type RestProcessorOptions = {
+  extensions?: string[]
+  parseCommand?: string
+  debug?: boolean
+}
 
-export class ReSTProcessor {
-  config: TextlintPluginOptions
-  constructor(config = {}) {
-    this.config = config
+export default class ReSTProcessor {
+  options: RestProcessorOptions
+  extensions: string[]
+
+  constructor(options: RestProcessorOptions) {
+    this.options = options
+    this.extensions = options.extensions ? options.extensions : []
   }
 
-  static availableExtensions() {
-    return ['.rst', '.rest']
+  availableExtensions() {
+    return ['.rst', '.rest'].concat(this.extensions)
   }
 
   processor(ext: string) {
     return {
-      preProcess(text: string, filePath?: string) {
-        return parse(text)
+      preProcess: (text: string, filePath?: string) => {
+        let debug: boolean
+        if (this.options.debug) {
+          debug = this.options.debug
+        } else if (process.env.DEBUG?.startsWith("textlint:rst")) {
+          debug = true
+        } else {
+          debug = false
+        }
+        const parseOption: ParseOption = {
+          parseCommand: this.options.parseCommand ? this.options.parseCommand : 'rst2ast -q',
+          debug: debug,
+        }
+        return parse(text, parseOption)
       },
-      postProcess(messages: any[], filePath?: string) {
+      postProcess: (messages: any[], filePath?: string) => {
         return {
           messages,
           filePath: filePath ? filePath : '<rst>',
